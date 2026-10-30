@@ -1,0 +1,43 @@
+{
+  "name": "pi-session-role",
+  "version": "0.1.0",
+  "description": "A persistent, session-bound system-prompt role for Pi.",
+  "license": "MIT",
+  "author": "Nikita Sklyarov",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ordinath/pi-session-role.git"
+  },
+  "homepage": "https://github.com/Ordinath/pi-session-role#readme",
+  "bugs": {
+    "url": "https://github.com/Ordinath/pi-session-role/issues"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "files": ["pi", "README.md", "LICENSE"],
+  "keywords": ["pi-package", "pi-extension", "session", "system-prompt"],
+  "pi": {
+    "extensions": ["./pi/index.ts"]
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test test/*.test.ts",
+    "prepublishOnly": "npm run typecheck && npm test"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*"
+  },
+  "peerDependenciesMeta": {
+    "@earendil-works/pi-coding-agent": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@earendil-works/pi-coding-agent": "1.4.0",
+    "@types/node": "22.20.4",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3"
+  }
+}
